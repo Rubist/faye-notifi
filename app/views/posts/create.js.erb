@@ -1,0 +1,5 @@
+<% broadcast "/posts/new" do %>
+	$('#posts').append("<%= escape_javascript render(@post)%>")
+	$('.count').html("<%= Post.all.size%>")
+<% end %>
+$('#post_message').val('');
