@@ -39,3 +39,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'faye'
 gem 'thin'
+gem 'gcm'
+
+gem 'bootstrap-sass'
+gem "twitter-bootstrap-rails"
+gem 'therubyracer'
+gem "less-rails"
