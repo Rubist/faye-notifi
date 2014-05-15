@@ -12,18 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
 
 
 $(function() {
   var faye = new Faye.Client('http://localhost:9292/faye');
-  alert('subscribing!')
+  // alert('subscribing!')
   faye.subscribe('/posts/new', function (data) {  	
     eval(data);
   });
-
-
 });
 
 
