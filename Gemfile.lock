@@ -61,8 +61,14 @@ GEM
     faye-websocket (0.7.3)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.3.1)
+    gcm (0.0.7)
+      httparty
+      json
     hike (1.2.3)
     http_parser.rb (0.6.0)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     jbuilder (2.0.7)
       activesupport (>= 3.0.0, < 5)
@@ -77,6 +83,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.3.3)
     multi_json (1.10.0)
+    multi_xml (0.5.5)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -144,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   faye
+  gcm
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.0)

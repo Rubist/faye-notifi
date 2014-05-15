@@ -39,3 +39,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'faye'
 gem 'thin'
+gem 'gcm'

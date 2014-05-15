@@ -27,9 +27,10 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    
     respond_to do |format|
       if @post.save
+        send_msg(@post)
         format.html { redirect_to new_post_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
         format.js
@@ -64,6 +65,22 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def send_msg(post)
+      require 'gcm'
+      gcm = GCM.new('AIzaSyAPNI6bfVjElDR0hVK8aco9Am_An5pmmO4')
+      registration_ids= ['APA91bFamLkdNBuXiueXQmDtXU_PoYwEzrUcvxYSlQWBJiWCETNHO3186m3tTLNG6Eyz4d72Vq2SIXk210vI5MXE_rHn0LmvuduRM7baWvA_ro2R2-3qWc5hMu3dc0S41ZU6lBD3SkaJFEbKsyScpn1Y2BQPqgYwxg'] # an array of one or more client registration IDs
+       options = {
+          'data' => {
+            'message' => post.message
+          },
+            'collapse_key' => 'updated_state'
+        }
+      response = gcm.send_notification(registration_ids, options)
+      p "response"
+      p response
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

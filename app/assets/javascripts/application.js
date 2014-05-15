@@ -22,4 +22,8 @@ $(function() {
   faye.subscribe('/posts/new', function (data) {  	
     eval(data);
   });
+
+
 });
+
+
